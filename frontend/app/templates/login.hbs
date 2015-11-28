@@ -1,0 +1,32 @@
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand page-scroll" href="#page-top">{{session.appName}}</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="container">
+    <div id="login-form-wrap">
+      <h2>Login to My App</h2>
+      <form {{action 'login' on='submit'}}>
+        <div class="form-group">
+          <label for="username">Email address</label>
+          {{input type="email" class="form-control" id="username" value=userName placeholder="Email" }}
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          {{input type="password" class="form-control" id="password" value=password placeholder="Password"}}
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Check me out
+          </label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </section>
+</main>

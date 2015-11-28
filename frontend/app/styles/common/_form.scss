@@ -1,0 +1,61 @@
+form{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	.row{
+		input[type='radio'], input[type='checkbox']{
+			width:initial;
+		}
+		input, select, textarea{
+			margin-bottom: 10px;
+		}
+	}
+	.fe-wrap, .field{
+		@extend .clearfix;
+		margin-bottom: 5px;
+		position: relative;
+
+		input[type='radio'], input[type='checkbox']{
+			width:initial;
+		}
+		input, select, textarea{
+			@extend .col-md-6;
+		}
+		select{
+			height: 30px;
+		}
+		label{
+			@extend .col-md-6;
+		}
+	}
+	&.search-form {
+		margin: 15px 0;
+	}
+}
+
+.error{
+	color: #b94a48;
+	float: left;
+	margin-left: 10px;
+}
+
+.nod {
+	position: relative;
+	.nod_msg{
+		left: 125px;
+		top: 15px;
+	}
+}
+.nod_msg{
+	color: red;
+	background: mistyrose;
+	top: 8px;
+	position: absolute;
+	display: inline;
+	padding: 0 10px;
+}
+
+.val {
+	.nod_msg {
+		left: 225px;
+	}
+}

@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2>{{#link-to 'users'}}Listing The Users{{/link-to}}</h2>
+    <table class="table table-bordered">
+      <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Actions</td>
+      </tr>
+      {{#each list as |u|}}
+        <tr>
+          <td>{{u.name}}</td>
+          <td>{{u.email}}</td>
+          <td>
+            {{#link-to 'users.show' u class='btn-show'}}View{{/link-to}}
+            {{#link-to 'users.edit' u class='btn-edit'}}Edit{{/link-to}}
+          </td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+  <div class="col-md-4">
+    {{outlet}}
+  </div>
+</div>

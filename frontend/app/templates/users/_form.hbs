@@ -1,0 +1,15 @@
+<form {{action 'saveUser' content on='submit'}}>
+  <div class="form-group">
+    <label for="first_name">First Name</label>
+    {{input class="form-control" id="first_name" placeholder="First Name" value=content.firstName}}
+  </div>
+  <div class="form-group">
+    <label for="last_name">Last Name</label>
+    {{input class="form-control" id="last_name" placeholder="Last Name" value=content.lastName}}
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    {{input type='email' class="form-control" id="exampleInputEmail1" placeholder="Enter email" value=content.email}}
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
