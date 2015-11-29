@@ -22,11 +22,6 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
-* For development with rails use
-* `ember server -out ../public`
-* Visit your app at [http://localhost:4200](http://localhost:3000).
-
-* For stand alone development use
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 

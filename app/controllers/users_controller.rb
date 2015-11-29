@@ -1,10 +1,3 @@
-#####################################################################
-# Copyleft: Free for humanity
-# Developer : Ranu Pratap Singh
-# Email : singh.ranupratap@gmail.com
-# Created Date : 22/07/14
-#####################################################################
-
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -19,6 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     authorize! :read, @user
+    render :json => @user, :status => :ok
   end
 
   # GET /users/new
@@ -63,7 +57,7 @@ class UsersController < ApplicationController
   def logged_in
     #This method will return the current logged in user if there is any.
     if current_user
-      render json: current_user, :meta => {:initial_permissions => []}
+      render json: current_user
     else
       render json: {:message => 'Nobody logged In'}, status: :ok
     end
@@ -147,6 +141,6 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit :first_name, :last_name, :email
+    params.require(:user).permit :firstname, :lastname, :email
   end
 end

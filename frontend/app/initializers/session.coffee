@@ -1,5 +1,5 @@
-`import Em from 'ember'`
-`import Session from 'frontend/utils/session'`
+`import Ember from 'ember'`
+`import Session from 'frontend/helpers/session'`
 
 SessionInitializer =
   name: 'injectSession'

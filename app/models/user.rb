@@ -3,17 +3,5 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, # :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  before_validation :set_password
-
-  # just a dummy method for admin
-  def admin?
-    self.id == 1
-  end
-
-  private
-  def set_password
-    if self.new_record?
-      self.password = email.split('@')[0]
-    end
-  end
+  validates :firstname,:lastname,:password, :presence => :true
 end

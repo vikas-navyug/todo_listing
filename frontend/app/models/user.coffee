@@ -1,11 +1,10 @@
-`import DS from 'ember-data'`
+`import DS from "ember-data"`
 
-User = DS.Model.extend
-  email: DS.attr 'string'
-  firstName: DS.attr 'string'
-  lastName: DS.attr 'string'
-  name: (->
-    @get('firstName') + " " + @get('lastName')
-  ).property('firstName', 'lastName')
+model = DS.Model.extend
 
-`export default User`
+  firstname: DS.attr('string')
+  lastname: DS.attr('string')
+  email: DS.attr('string')
+
+
+`export default model`
