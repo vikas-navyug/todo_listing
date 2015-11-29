@@ -4,7 +4,7 @@
 route = Ember.Route.extend
 
   beforeModel:()->
-    @getCurrentUser()
+    return Ember.RSVP.all[@getCurrentUser()]
 
   getCurrentUser:()->
     that = this
@@ -13,10 +13,11 @@ route = Ember.Route.extend
       type: 'GET'
       ).then(
         (data)->
-          if data.message == 'Nobody logged In'
-            that.transitionTo('login')
-          else
-            that.get('session').initialize(data)
+          if data.message != 'Nobody logged In'
+            that.store.find('user',data.id).then(
+              (user)->
+                that.get('session').set('currentUser',user)
+            )
       )
 
 `export default route`
